@@ -16,5 +16,10 @@ router.post('/create-user', user_validator, postUser)
 router.post('/update-user', updateUser)
 //localhost:3000/api/delete-user
 router.post('/delete-user', deleteUser)
+//TODO: Retornar los correos de todos los usuario
+//router.post('/users-emails', )
+
+//TODO:  Retorne los nombres que empiecen con f
+//router.post('/users-start-f', )
 
 module.exports = router;
