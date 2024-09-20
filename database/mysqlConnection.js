@@ -1,9 +1,9 @@
 const mysql = require("mysql2")
 const {database} = require('./keys');
-const pool = mysql.createPool(database);
+const mysqlConnection = mysql.createPool(database);
 const {promisify} = require('util');
 
-pool.getConnection( function(err,conn){
+mysqlConnection.getConnection( function(err,conn){
     if(err){
         console.log(err);
     }
@@ -12,5 +12,5 @@ pool.getConnection( function(err,conn){
     return;
 });
 //convert to promiseto has callback
-pool.query = promisify(pool.query);
-module.exports = pool;
+mysqlConnection.query = promisify(mysqlConnection.query);
+module.exports = mysqlConnection;
