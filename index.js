@@ -5,8 +5,8 @@ const app = express()
 const port = 3000
 
 //Middleware  para permitir manejar json
-//localhost:3000/api/users
 app.use(express.json())
+
 app.use('/api', userRoutes)
 
 app.listen(port, ()=>{
