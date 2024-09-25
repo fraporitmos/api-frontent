@@ -7,7 +7,7 @@ const getUsers = async (req, res) => {
 
     if (Object.keys(result).length > 0) {
       res.status(200).json({
-        usurios: result,
+        usuarios: result,
       });
 
     } else {

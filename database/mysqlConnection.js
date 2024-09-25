@@ -6,10 +6,11 @@ const {promisify} = require('util');
 mysqlConnection.getConnection( function(err,conn){
     if(err){
         console.log(err);
+    }else{
+        if(conn) conn.release();
+        console.log('✅ Base de datos conectada');
+        return;
     }
-    if(conn) conn.release();
-    console.log('✅ Base de datos conectada');
-    return;
 });
 //convert to promiseto has callback
 mysqlConnection.query = promisify(mysqlConnection.query);
