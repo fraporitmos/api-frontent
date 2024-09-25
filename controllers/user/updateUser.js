@@ -1,4 +1,4 @@
-const mysqlConection = require("../database/mysqlConnection");
+const mysqlConection = require("../../database/mysqlConnection");
 
 const updateUser = async (req, res) => {
     //Desestructurar un objecto 
