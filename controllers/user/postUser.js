@@ -1,4 +1,4 @@
-const mysqlConection = require("../database/mysqlConnection");
+const mysqlConection = require("../../database/mysqlConnection");
 
 const postUser = async (req, res) => {
     //Desestructurar un objecto 
@@ -6,6 +6,7 @@ const postUser = async (req, res) => {
     try {
 
         const result = await mysqlConection.query(`INSERT INTO users (id, names, phone, email) VALUES (NULL, '${names}' , '${phone}', '${email}' );`);
+
 
         if (result.serverStatus === 2) {
             res.status(200).json({
