@@ -6,11 +6,11 @@ const getProducts = async (req, res) => {
 
     if (Object.keys(result).length > 0) {
       res.status(200).json({
-        data: result,
+        productos: result,
       });
     } else {
       res.status(200).json({
-        message: 'No data found',
+        msg: 'No data found',
       });
     }
   } catch (error) {
