@@ -1,0 +1,30 @@
+{
+	"MySQL Express Handler": {
+	  "prefix": "myex",
+	  "body": [
+		"const ${1:functionName} = async (req, res) => {",
+		"  try {",
+		"    const result = await mysqlConection.query(`SELECT * FROM \`table_name\`;`);",
+		"",
+		"    if (Object.keys(result).length > 0) {",
+		"      res.status(200).json({",
+		"        data: result,",
+		"      });",
+		"    } else {",
+		"      res.status(200).json({",
+		"        message: 'No data found',",
+		"      });",
+		"    }",
+		"  } catch (error) {",
+		"    res.status(500).json({",
+		"      msg: error.message,",
+		"    });",
+		"  }",
+		"};",
+		"",
+		"module.exports = { ${1:functionName} };"
+	  ],
+	  "description": "MySQL Express handler template"
+	}
+  }
+  

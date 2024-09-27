@@ -24,3 +24,15 @@ CREATE TABLE ticket(
     FOREIGN KEY (id_user) REFERENCES users(id),
     FOREIGN KEY (id_product) REFERENCES product(id)
 )
+
+
+CREATE VIEW user_product_info AS
+SELECT 
+TI.id, US.names,US.phone,US.email,
+PR.product,PR.weight,PR.img,
+PR.price ,TI.cantidad,TI.fecha
+FROM ticket TI 
+INNER JOIN users US ON 
+TI.id_user = US.id 
+INNER JOIN product PR ON
+TI.id_product = PR.id

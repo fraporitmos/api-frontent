@@ -12,7 +12,7 @@ const getUsers = async (req, res) => {
 
     } else {
       res.status(200).json({
-        mensaje: "No hay usuarios por ahora.",
+        msg: "No hay usuarios por ahora.",
       });
     }
 
