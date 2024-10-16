@@ -20,9 +20,7 @@ CREATE TABLE ticket(
     id_user INT NOT NULL,
     id_product INT NOT NULL,
     cantidad INT NOT NULL,
-    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_user) REFERENCES users(id),
-    FOREIGN KEY (id_product) REFERENCES product(id)
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP
 )
 
 
