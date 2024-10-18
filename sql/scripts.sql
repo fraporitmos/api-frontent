@@ -34,3 +34,13 @@ INNER JOIN users US ON
 TI.id_user = US.id 
 INNER JOIN product PR ON
 TI.id_product = PR.id
+
+
+SELECT
+ TI.id AS id,
+ (TI.cantidad * PR.price) AS ganacia,
+month(TI.fecha) AS mes
+
+FROM ticket TI JOIN product PR
+ON TI.id_product = PR.id
+ORDER BY TI.id ASC
